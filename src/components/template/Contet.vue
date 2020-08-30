@@ -14,7 +14,9 @@ export default {
 .content {
   grid-area: content;
   background-color: var(--background-color);
-  padding: 20px;
+  padding: 0px;
   width: 100%;
+  z-index: 0;
+  height: 3000px;
 }
 </style>

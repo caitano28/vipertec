@@ -20,19 +20,21 @@
       <router-link to="/" area-label="ViperTec" class="brand-logo">
         <img :src="require(`@/assets/img/${logo}`)" :alt="title" class="logo" />
       </router-link>
-      <ul class="right hide-on-med-and-down">
-        <li v-for="(item, i) in menu" :key="i">
+      <div class="right hide-on-med-and-down">
+        <ListItens :itens="menu" />
+        <!-- <li v-for="(item, i) in menu" :key="i">
           <router-link :to="item.href" class="navlink">
             <i class="icon-align" :class="item.icon"></i>
             {{ item.name }}
           </router-link>
-        </li>
-      </ul>
+        </li> -->
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
+import ListItens from "./ListItens";
 import { mapState } from "vuex";
 export default {
   name: "NavBar",
@@ -47,6 +49,7 @@ export default {
     isMenuVisible: (state) => state.isMenuVisible,
     menu: (state) => state.menu,
   }),
+  components: { ListItens },
   methods: {
     toggleMenu() {
       this.$store.commit("toggleMenu");

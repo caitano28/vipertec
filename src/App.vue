@@ -31,6 +31,12 @@ export default {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Techno Hideo";
+  src: url("./assets/fonts/techno_hideo.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --main-color: white;
   --primary-color: black;
@@ -57,7 +63,8 @@ export default {
     "header header"
     "menu content"
     "menu content";
-  z-index: 1;
+  /* z-index: 1; */
+  overflow-x: hidden;
 }
 #app.hide-menu {
   grid-template-areas:
@@ -128,6 +135,11 @@ body {
 @media only screen and (min-width: 993px) {
   .container {
     width: 70%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #app {
+    grid-template-columns: 350px 10px;
   }
 }
 </style>
